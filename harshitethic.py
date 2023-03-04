@@ -7,7 +7,7 @@ import openai
 #OpenAI API key
 aienv = os.getenv('OPENAI_KEY')
 if aienv == None:
-    openai.api_key = "ENTER YOUR API KEY HERE"
+    openai.api_key = "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"
 else:
     openai.api_key = aienv
 print(aienv)
@@ -15,7 +15,7 @@ print(aienv)
 #Telegram bot key
 tgenv = os.getenv('TELEGRAM_KEY')
 if tgenv == None:
-    tgkey = "ENTER YOUR TELEGRAM TOKEN HERE"
+    tgkey = "6143932487:AAGUGQBEcgXbBhM6PiwUYK7qCU2eH347d2E"
 else:
     tgkey = tgenv
 print(tgenv)
@@ -35,8 +35,8 @@ running = False
 cache = None
 qcache = None
 chat_log = None
-botname = 'Harshit ethic'
-username = 'harshitethic_bot'
+botname = 'Taran chat bot'
+username = 'taran69_bot'
 # Max chat log length (A token is about 4 letters and max tokens is 2048)
 max = int(3000)
 
@@ -66,12 +66,12 @@ def start(bot, update):
         chat_log = None
         cache = None
         qcache = None
-        botname = 'Harshit Ethic'
-        username = 'harshitethic_bot'
+        botname = 'Taran'
+        username = 'taran69_bot'
         update.message.reply_text('Hi')
         return 
     else:
-        update.message.reply_text('I am currently talking to someone else. Can you please wait ' + left + ' seconds?')
+        update.message.reply_text('i beby i lobh uh...how may i help uh' + left + ' seconds?')
         return
 
 
@@ -93,20 +93,20 @@ def reset(bot, update):
         chat_log = None
         cache = None
         qcache = None
-        botname = 'Harshit Ethic'
-        username = 'harshitethic_bot'
-        update.message.reply_text('Bot has been reset, send a message!')
+        botname = 'Taran'
+        username = 'taran69_bot'
+        update.message.reply_text('ok babes now i dont know anything about uh,i am reset, send a message!')
         return
     if tim == 1:
         chat_log = None
         cache = None
         qcache = None
-        botname = 'Harshit Ethic'
-        username = 'harshitethic_bot'
+        botname = 'Taran'
+        username = 'taran69_bot'
         update.message.reply_text('Bot has been reset, send a message!')
         return 
     else:
-        update.message.reply_text('I am currently talking to someone else. Can you please wait ' + left + ' seconds?')
+        update.message.reply_text('i beby i lobh uh...how may i help uh ' + left + ' seconds?')
         return
 
 
@@ -128,12 +128,12 @@ def retry(bot, update):
         chat_log = None
         cache = None
         qcache = None
-        botname = 'Harshit Ethic'
-        username = 'harshitethic_bot'
+        botname = 'Taran'
+        username = 'taran69_bot'
         update.message.reply_text('Send a message!')
         return 
     else:
-        update.message.reply_text('I am currently talking to someone else. Can you please wait ' + left + ' seconds?')
+        update.message.reply_text('i beby i lobh uh...how may i help uh ' + left + ' seconds?')
         return
 
 def runn(bot, update):
@@ -189,13 +189,13 @@ def wait(bot, update, botname, username, new):
                 cache = None
                 qcache = None
                 user = ""
-                username = 'harshitethic_bot'
-                botname = 'Harshit Ethic'
+                username = 'taran69_bot'
+                botname = 'Taran'
                 update.message.reply_text('Timer has run down, bot has been reset to defaults.')
                 running = False
     else:
         left = str(tim)
-        update.message.reply_text('I am currently talking to someone else. Can you please wait ' + left + ' seconds?')
+        update.message.reply_text('i beby i lobh uh...how may i help uh ' + left + ' seconds?')
 
 
 ################
@@ -220,7 +220,7 @@ def ask(username, botname, question, chat_log=None):
     t = '[' + ampm + '] '
     prompt = f'{chat_log}{t}{username}: {question}\n{t}{botname}:'
     response = completion.create(
-        prompt=prompt, engine="text-curie-001", stop=['\n'], temperature=0.7,
+        prompt=prompt, engine="text-curie-001", stop=['\n'], temperature=0.9,
         top_p=1, frequency_penalty=0, presence_penalty=0.6, best_of=3,
         max_tokens=500)
     answer = response.choices[0].text.strip()
@@ -250,7 +250,7 @@ def interact(bot, update, botname, username, new):
             print("Sentiment of input:\n")
             print(vs)
         if vs['neg'] > 1:
-            update.message.reply_text('Can we talk something else?')
+            update.message.reply_text('Can we talk something else beby?')
             return
     if new == True:
         if debug == True:
